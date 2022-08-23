@@ -1,7 +1,7 @@
 {
-  "name": "uix-webpack-typescript-jest-react-scaffold",
+  "name": "dog-information",
   "version": "0.0.5",
-  "description": "A scaffold boilerplate including TypeScript, React, Jest and ESLint.",
+  "description": "get information about dogs here",
   "main": "dist/app.js",
   "directories": {
     "test": "test"
@@ -21,7 +21,9 @@
     "check": "tsc",
     "dev": "cross-env NODE_ENV=development webpack --progress --mode development --config build/config.js",
     "build": "cross-env NODE_ENV=production webpack --progress --mode production --config build/config.js",
-    "test": "cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest",
+    "lint": "eslint . --ext .ts",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' 'test/**/*.ts' --write"
   },
   "repository": {
     "type": "git",
@@ -47,16 +49,23 @@
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.1.0",
+    "@shopify/eslint-plugin": "^42.0.1",
     "@types/jest": "^27.0.3",
     "@types/react": "^17.0.38",
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
-    "@typescript-eslint/parser": "^4.28.5",
+    "@typescript-eslint/eslint-plugin": "5.33.0",
+    "@typescript-eslint/parser": "^5.34.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-module-resolver": "^4.1.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.3.1",
-    "eslint": "^7.32.0",
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "glslify-loader": "^2.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.4",
@@ -65,6 +74,7 @@
     "mini-css-extract-plugin": "^2.4.5",
     "moment": "^2.29.1",
     "node-sass": "^7.0.1",
+    "prettier": "^2.7.1",
     "raw-loader": "^4.0.2",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
@@ -76,29 +86,8 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.2"
   },
-  "eslintConfig": {
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser",
-      "ecmaVersion": 2018,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "extends": [
-      "plugin:react/recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "rules": {},
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    }
-  },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  },
-  "author": "UIUX Lab"
+  }
 }
